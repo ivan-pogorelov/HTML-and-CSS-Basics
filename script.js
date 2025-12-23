@@ -236,3 +236,160 @@
 //   console.log("target:", event.target);
 //   console.log("currentTarget:", event.currentTarget);
 // });
+
+// Event Delegation
+// const list = document.querySelector("#list");
+
+// list.addEventListener("click", (event) => {
+//   if (!event.target.classList.contains("item")) {
+//     return;
+//   }
+
+//   const items = list.querySelectorAll(".item");
+//   items.forEach((item) => item.classList.remove("active"));
+
+//   event.target.classList.add("active");
+// });
+
+//Tusk Event Delegation
+// const list = document.querySelector("#list");
+
+// list.addEventListener("click", (event) => {
+//   const li = event.target.closest(".item");
+//   if (!li) return;
+
+//   const items = list.querySelectorAll(".item");
+//   items.forEach((el) => el.classList.remove("active"));
+
+//   li.classList.add("active");
+// });
+
+//Arrays + DOM
+// const menuItems = ["Main", "News", "Store", "Profile"];
+// const list = document.querySelector("#list");
+
+// function renderMenu() {
+//   list.innerHTML = "";
+
+//   menuItems.forEach((text) => {
+//     const li = document.createElement("li");
+//     li.textContent = text;
+//     li.classList.add("item");
+//     list.appendChild(li);
+//   });
+// }
+
+// list.addEventListener("click", (event) => {
+//   const li = event.target.closest(".item");
+//   if (!li) return;
+
+//   const items = list.querySelectorAll(".item");
+//   items.forEach((el) => el.classList.remove("active"));
+
+//   li.classList.add("active");
+// });
+
+// renderMenu();
+
+// const addBtn = document.querySelector("#add");
+
+// addBtn.addEventListener("click", () => {
+//   menuItems.push("New item");
+//   renderMenu();
+// });
+
+//Render from objects
+// const menuItems = [
+//   { id: 1, title: "Main", active: false },
+//   { id: 2, title: "News", active: false },
+//   { id: 3, title: "Store", active: false },
+//   { id: 4, title: "Profile", active: false },
+// ];
+
+// const list = document.querySelector("#list");
+
+// function renderMenu() {
+//   list.innerHTML = "";
+
+//   menuItems.forEach((item) => {
+//     const li = document.createElement("li");
+//     li.textContent = item.title;
+//     li.classList.add("item");
+
+//     if (item.active) {
+//       li.classList.add("active");
+//     }
+
+//     li.dataset.id = item.id; // связь DOM ↔ данные
+
+//     list.appendChild(li);
+//   });
+// }
+
+// renderMenu();
+
+// list.addEventListener("click", (event) => {
+//   const li = event.target.closest(".item");
+//   if (!li) return;
+
+//   const id = Number(li.dataset.id);
+
+//   menuItems.forEach((item) => {
+//     item.active = item.id === id;
+//   });
+
+//   renderMenu();
+// });
+
+// const resetBtn = document.querySelector("#reset");
+
+// resetBtn.addEventListener("click", () => {
+//   menuItems.forEach((item) => {
+//     item.active = false;
+//   });
+
+//   renderMenu();
+// });
+
+// Map / filter + render
+const list = document.querySelector("#list");
+
+const menuItems = [
+  { id: 1, title: "Main", active: false, visible: true },
+  { id: 2, title: "News", active: false, visible: true },
+  { id: 3, title: "Store", active: false, visible: true },
+  { id: 4, title: "Profile", active: false, visible: true },
+];
+
+function renderMenu() {
+  list.innerHTML = "";
+
+  menuItems.forEach((item) => {
+    if (!item.visible) return;
+
+    const li = document.createElement("li");
+    li.textContent = item.title;
+    li.classList.add("item");
+
+    if (item.active) {
+      li.classList.add("active");
+    }
+
+    li.dataset.id = item.id;
+    list.appendChild(li);
+  });
+}
+
+renderMenu();
+
+const searchInput = document.querySelector("#search");
+
+searchInput.addEventListener("input", (event) => {
+  const value = event.target.value.toLowerCase();
+
+  menuItems.forEach((item) => {
+    item.visible = item.title.toLowerCase().includes(value);
+  });
+
+  renderMenu();
+});
