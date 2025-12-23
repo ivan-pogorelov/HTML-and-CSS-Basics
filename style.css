@@ -60,6 +60,27 @@ footer {
   color: var(--muted);
 }
 
+.just-div {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container-second {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-around;
+  padding: 24px;
+}
+
+.container_card-second {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+}
+
 /* =========================
    5) Header / Navigation
 ========================= */
@@ -73,6 +94,10 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 16px;
+}
+
+.item {
+  padding: 10px;
 }
 
 nav a {
@@ -101,13 +126,13 @@ h2 {
 ========================= */
 .card {
   display: flex;
-  gap: 32px;
   align-items: flex-start;
 
   background: var(--card-bg);
   padding: 24px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  border: 1px solid red;
 }
 
 .card-text p + p {
@@ -129,6 +154,12 @@ figcaption {
   margin-top: 8px;
   font-size: 14px;
   color: #555;
+}
+
+.active {
+  color: red;
+  font-weight: bold;
+  background-color: red;
 }
 
 /* =========================

@@ -8,13 +8,14 @@
   </head>
   <body>
     <header class="container">
-      <h1>Hello World</h1>
       <nav>
         <ul>
-          <li><a href="#main">Main</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#store">Store</a></li>
-          <li><a href="#profile">Profile</a></li>
+          <li class="navigation_item item">
+            <a href="#main"><span>Main</span></a>
+          </li>
+          <li class="navigation_item"><a href="#news">News</a></li>
+          <li class="navigation_item"><a href="#store">Store</a></li>
+          <li class="navigation_item"><a href="#profile">Profile</a></li>
         </ul>
       </nav>
     </header>
@@ -51,8 +52,17 @@
           </figure>
         </div>
       </section>
-    </main>
 
+      <section class="container-second">
+        <div class="container_card-second"></div>
+        <div class="container_card-second"></div>
+        <div class="container_card-second"></div>
+      </section>
+    </main>
+    <div class="just-div">
+      <button id="toggle">Toggle</button>
+      <p id="text">Hello DOM</p>
+    </div>
     <footer class="container">
       <p><strong>Just text about copyright</strong></p>
     </footer>

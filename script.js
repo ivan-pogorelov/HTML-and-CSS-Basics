@@ -144,16 +144,95 @@
 // countDown(5);
 
 //Arrow Functions
-const isAdult = (age) => {
-  return age >= 18 ? "adult" : "underage";
-};
+// const isAdult = (age) => {
+//   return age >= 18 ? "adult" : "underage";
+// };
 
-console.log(isAdult(12));
+// console.log(isAdult(12));
 
-const countDown = (start) => {
-  for (let i = start; i > 0; i--) {
-    console.log(i);
-  }
-};
+// const countDown = (start) => {
+//   for (let i = start; i > 0; i--) {
+//     console.log(i);
+//   }
+// };
 
-countDown(5);
+// countDown(5);
+
+// First step DOM
+// const title = document.querySelector("#title");
+// const button = document.querySelector("#btn");
+
+// button.addEventListener("click", () => {
+//   title.textContent = "Button was clicked!";
+// });
+
+// Task (DOM)
+// const counter = document.querySelector("#counter");
+// const plusButton = document.querySelector("#plus");
+
+// let count = 0;
+
+// plusButton.addEventListener("click", () => {
+//   count++;
+//   counter.textContent = count;
+// });
+
+// ClassList
+// const toggleBtn = document.querySelector("#toggle");
+// const text = document.querySelector("#text");
+
+// toggleBtn.addEventListener("click", () => {
+//   text.classList.toggle("active");
+// });
+
+// const items = document.querySelectorAll(".navigation_item");
+
+// items.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     item.classList.toggle("active");
+//   });
+// });
+
+// NEXT STEP
+// const containerCardSecond = document.querySelectorAll(".container_card-second");
+
+// containerCardSecond.forEach((element) => {
+//   element.addEventListener("click", () => {
+//     element.classList.toggle("active");
+//   });
+// });
+
+//Only one active works
+// const containerCardSecond = document.querySelectorAll(".container_card-second");
+
+// containerCardSecond.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     containerCardSecond.forEach((el) => {
+//       el.classList.remove("active");
+//     });
+
+//     item.classList.add("active");
+//   });
+// });
+
+// Event target
+// const containerCardSecond = document.querySelectorAll(".container_card-second");
+
+// containerCardSecond.forEach((item) => {
+//   item.addEventListener("click", (event) => {
+//     containerCardSecond.forEach((el) => el.classList.remove("active"));
+//     event.target.classList.add("active");
+//   });
+// });
+
+// Event.currentTarget
+// const item = document.querySelector(".item");
+
+// item.addEventListener("click", (event) => {
+//   event.currentTarget.classList.add("active");
+// });
+
+// item.addEventListener("click", (event) => {
+//   console.log("target:", event.target);
+//   console.log("currentTarget:", event.currentTarget);
+// });
